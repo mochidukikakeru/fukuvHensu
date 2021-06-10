@@ -42,6 +42,7 @@ namespace fukuvHensu
             // 
             // textBox1
             // 
+            this.textBox1.CausesValidation = false;
             this.textBox1.Location = new System.Drawing.Point(12, 12);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 23);
@@ -98,6 +99,7 @@ namespace fukuvHensu
             // 
             // timer1
             // 
+            this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // label1
