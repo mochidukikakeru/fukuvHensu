@@ -18,11 +18,33 @@ namespace fukuvHensu
         {
             InitializeComponent();
         }
+        private void Form_Load(object sender,EventArgs e)
+        {
+            MessageBox.Show("幅" + ClientSize.Width);
+            MessageBox.Show("高さ" + ClientSize.Height);
+        }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             label1.Left += vx;
             label1.Top += vy;
+
+            if(label1.Left<0)
+            {
+                vx = Math.Abs(vx);
+            }
+            if(label1.Top<0)
+            {
+                vy = Math.Abs(vy);
+            }
+            if(label1.Right<ClientSize.Width)
+            {
+                vx = -Math.Abs(vx);
+            }
+            if(label1.Bottom>ClientSize.Height)
+            {
+                vy = -Math.Abs(vy);
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -47,6 +69,11 @@ namespace fukuvHensu
         {
             vx = 0;
             vy = 1;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
